@@ -1,0 +1,28 @@
+﻿@page "/counter"
+
+<PageTitle>Counter</PageTitle>
+
+<h1>Counter</h1>
+
+<p role="status">Current count: @currentCount</p>
+
+<button class="btn btn-primary" @onclick="IncrementCountAsync">Click me</button>
+
+@code {
+    [Inject]
+    public ILogger<Counter> Logger { get; set; } = default!;
+
+    [Inject]
+    public HttpClient HttpClient { get; set; } = default!;
+
+    private int currentCount = 0;
+
+    private async Task IncrementCountAsync()
+    {
+        Logger.LogInformation("Counter Clicked!");
+        currentCount++;
+
+        HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Get, "https://keycloak.jaspervannoordenburg.nl/realms/amazingcluster/.well-known/openid-configuration");
+        await HttpClient.SendAsync(request);
+    }
+}

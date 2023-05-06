@@ -1,0 +1,82 @@
+name: dockercompose8716909576265528160
+services:
+  blazorsignalrbackplanetest:
+    build:
+      context: C:\Users\Jasper\source\repos\BlazorSignalRBackplaneTest
+      dockerfile: BlazorSignalRBackplaneTest/Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: https://+:443;http://+:80
+    image: blazorsignalrbackplanetest
+    networks:
+      default: null
+    ports:
+    - mode: ingress
+      target: 80
+      published: "5001"
+      protocol: tcp
+    - mode: ingress
+      target: 443
+      published: "6001"
+      protocol: tcp
+    volumes:
+    - type: bind
+      source: C:\Users\Jasper\AppData\Roaming/Microsoft/UserSecrets
+      target: /root/.microsoft/usersecrets
+      read_only: true
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Users\Jasper\AppData\Roaming/ASP.NET/Https
+      target: /root/.aspnet/https
+      read_only: true
+      bind:
+        create_host_path: true
+  blazorsignalrbackplanetest2:
+    build:
+      context: C:\Users\Jasper\source\repos\BlazorSignalRBackplaneTest
+      dockerfile: BlazorSignalRBackplaneTest/Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: https://+:443;http://+:80
+    image: blazorsignalrbackplanetest
+    networks:
+      default: null
+    ports:
+    - mode: ingress
+      target: 80
+      published: "5002"
+      protocol: tcp
+    - mode: ingress
+      target: 443
+      published: "6002"
+      protocol: tcp
+    volumes:
+    - type: bind
+      source: C:\Users\Jasper\AppData\Roaming/Microsoft/UserSecrets
+      target: /root/.microsoft/usersecrets
+      read_only: true
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Users\Jasper\AppData\Roaming/ASP.NET/Https
+      target: /root/.aspnet/https
+      read_only: true
+      bind:
+        create_host_path: true
+  redis:
+    image: redis/redis-stack:latest
+    networks:
+      default: null
+    ports:
+    - mode: ingress
+      target: 6379
+      published: "6379"
+      protocol: tcp
+    - mode: ingress
+      target: 8001
+      published: "8001"
+      protocol: tcp
+networks:
+  default:
+    name: dockercompose8716909576265528160_default
