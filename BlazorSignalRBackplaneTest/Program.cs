@@ -31,7 +31,7 @@ namespace BlazorSignalRBackplaneTest
                     {
                         EndPoints = { { builder.Configuration.GetValue<string>("signalr:redis:host"), builder.Configuration.GetValue<int>("signalr:redis:port") } },
                         Password = builder.Configuration.GetValue<string>("REDIS_PASSWORD"),
-                        ServiceName = "BackplaneTest"
+                        ServiceName = builder.Configuration.GetValue<string>("signalr:redis:masterSet")
                     };
                 });
             }
