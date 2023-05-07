@@ -2,6 +2,7 @@ using BlazorSignalRBackplaneTest.Data;
 
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
+using Microsoft.AspNetCore.Http.Connections;
 using Microsoft.AspNetCore.SignalR;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -51,7 +52,11 @@ namespace BlazorSignalRBackplaneTest
 
             app.UseRouting();
 
-            app.MapBlazorHub();
+            app.MapBlazorHub(options =>
+            {
+                options.Transports = HttpTransportType.WebSockets;
+            });
+
             app.MapFallbackToPage("/_Host");
 
             app.Run();

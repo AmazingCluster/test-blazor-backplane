@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
     <link href="css/site.css" rel="stylesheet" />
     <link href="BlazorSignalRBackplaneTest.styles.css" rel="stylesheet" />
-    <link rel="icon" type="image/png" href="favicon.png"/>
+    <link rel="icon" type="image/png" href="favicon.png" />
     <component type="typeof(HeadOutlet)" render-mode="ServerPrerendered" />
 </head>
 <body>
@@ -30,5 +30,16 @@
     </div>
 
     <script src="_framework/blazor.server.js"></script>
+    <script>
+        @* The below settings are required as we do not want to use sticky sessions for our SignalR connection. This sets the transports to use to 'WebSockets' only (disabling Long polling & server-side events) and skips negotitation, which isn't necessary for WSS connections anyway.' *@
+        Blazor.start({
+            configureSignalR: function (builder) {
+                builder.withUrl("/_blazor", {
+                    skipNegotiation: true,
+                    transport: 1 @* Websockets *@
+                });
+            }
+        });
+    </script>
 </body>
 </html>
