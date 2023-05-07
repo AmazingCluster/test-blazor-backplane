@@ -25,4 +25,4 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ghcr.io/AmazingCluster/BlazorPackPlaneTest:latest
+          tags: ghcr.io/amazingcluster/blazorbackplane:latest
