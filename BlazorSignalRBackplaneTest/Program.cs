@@ -3,6 +3,7 @@ using BlazorSignalRBackplaneTest.Data;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.SignalR;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace BlazorSignalRBackplaneTest
 {
@@ -24,7 +25,15 @@ namespace BlazorSignalRBackplaneTest
 
             if (builder.Configuration.GetValue<bool>("signalr:UseRedisBackplane"))
             {
-                signalRBuilder.AddStackExchangeRedis(builder.Configuration.GetConnectionString("signalr:redisconnectionstring")!);
+                signalRBuilder.AddStackExchangeRedis(options =>
+                {
+                    options.Configuration = new StackExchange.Redis.ConfigurationOptions
+                    {
+                        EndPoints = { { builder.Configuration.GetValue<string>("signalr:redis:host"), builder.Configuration.GetValue<int>("signalr:redis:port") } },
+                        Password = builder.Configuration.GetValue<string>("signalr:redis:password"),
+                        ServiceName = "BackplaneTest"
+                    };
+                });
             }
 
             var app = builder.Build();
