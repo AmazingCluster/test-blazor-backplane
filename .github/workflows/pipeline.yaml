@@ -15,9 +15,9 @@ jobs:
       - name: Log in to Harbor
         uses: docker/login-action@v2
         with:
-          registry: harbor.jaspervannoordenburg.nl/v2 
-          username: ${{ secrets.HARBOR_USERNAME }}
-          password: ${{ secrets.HARBOR_PASSWORD }}
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
       
       - name: Build and push Docker image
         uses: docker/build-push-action@f2a1d5e99d037542a71f64918e516c093c6f3fc4
@@ -25,4 +25,4 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: harbor.jaspervannoordenburg.nl/v2/library/docker/BlazorPackPlaneTest:latest
+          tags: ghcr.io/AmazingCluster/BlazorPackPlaneTest:latest
