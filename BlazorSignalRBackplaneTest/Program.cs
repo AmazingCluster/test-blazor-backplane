@@ -22,13 +22,10 @@ namespace BlazorSignalRBackplaneTest
 
             ISignalRServerBuilder signalRBuilder = builder.Services.AddSignalR();
 
-            if(builder.Configuration.GetValue<bool>("signalr:UseRedisBackplane"))
+            if (builder.Configuration.GetValue<bool>("signalr:UseRedisBackplane"))
             {
-                signalRBuilder.AddStackExchangeRedis(options =>
-                {
-                    options.Configuration.Password = builder.Configuration.GetConnectionString("signalr:redisconnectionstring");
-                });
-            }                
+                signalRBuilder.AddStackExchangeRedis(builder.Configuration.GetConnectionString("signalr:redisconnectionstring")!);
+            }
 
             var app = builder.Build();
 

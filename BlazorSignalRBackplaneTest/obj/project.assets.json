@@ -1351,11 +1351,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Jasper\\source\\repos\\BlazorSignalRBackplaneTest\\BlazorSignalRBackplaneTest\\BlazorSignalRBackplaneTest.csproj",
+      "projectUniqueName": "C:\\Users\\Jasper\\AmazingCluster\\test-blazor-backplane\\BlazorSignalRBackplaneTest\\BlazorSignalRBackplaneTest.csproj",
       "projectName": "BlazorSignalRBackplaneTest",
-      "projectPath": "C:\\Users\\Jasper\\source\\repos\\BlazorSignalRBackplaneTest\\BlazorSignalRBackplaneTest\\BlazorSignalRBackplaneTest.csproj",
+      "projectPath": "C:\\Users\\Jasper\\AmazingCluster\\test-blazor-backplane\\BlazorSignalRBackplaneTest\\BlazorSignalRBackplaneTest.csproj",
       "packagesPath": "C:\\Users\\Jasper\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Jasper\\source\\repos\\BlazorSignalRBackplaneTest\\BlazorSignalRBackplaneTest\\obj\\",
+      "outputPath": "C:\\Users\\Jasper\\AmazingCluster\\test-blazor-backplane\\BlazorSignalRBackplaneTest\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Jasper\\AppData\\Roaming\\NuGet\\NuGet.Config",
