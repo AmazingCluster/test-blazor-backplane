@@ -29,7 +29,7 @@
         <a class="dismiss">🗙</a>
     </div>
 
-    <script src="_framework/blazor.server.js"></script>
+    <script src="_framework/blazor.server.js" autostart="false"></script>
     <script>
         @* The below settings are required as we do not want to use sticky sessions for our SignalR connection. This sets the transports to use to 'WebSockets' only (disabling Long polling & server-side events) and skips negotitation, which isn't necessary for WSS connections anyway.' *@
         Blazor.start({
