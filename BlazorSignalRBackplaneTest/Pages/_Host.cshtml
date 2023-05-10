@@ -3,11 +3,16 @@
 @namespace BlazorSignalRBackplaneTest.Pages
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
+@{
+    Response.Headers["Cache-Control"] = "no-store";
+}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Cache-Control" content="no-store" />
     <base href="~/" />
     <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
     <link href="css/site.css" rel="stylesheet" />
@@ -29,15 +34,22 @@
         <a class="dismiss">🗙</a>
     </div>
 
+    @* Autostart is false as we start Blazor ourselves with custom settings *@
     <script src="_framework/blazor.server.js" autostart="false"></script>
     <script>
         @* The below settings are required as we do not want to use sticky sessions for our SignalR connection. This sets the transports to use to 'WebSockets' only (disabling Long polling & server-side events) and skips negotitation, which isn't necessary for WSS connections anyway.' *@
         Blazor.start({
-            configureSignalR: function (builder) {
+            configureSignalR: (builder) => {
                 builder.withUrl("/_blazor", {
                     skipNegotiation: true,
                     transport: 1 @* Websockets *@
                 });
+            },
+            reconnectionHandler: {
+                onConnectionDown: (options, error) => {
+                    console.Log(options);
+                    console.log(error);
+                }
             }
         });
     </script>
