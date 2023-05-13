@@ -20,8 +20,8 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jasper/AmazingCluster/test-blazor-backplane/BlazorSignalRBackplaneTest/Pages/Counter.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
+[C:/Users/Jasper/AmazingCluster/test-blazor-backplane/BlazorSignalRBackplaneTest/Pages/Counter/Counter.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlclxDb3VudGVyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Jasper/AmazingCluster/test-blazor-backplane/BlazorSignalRBackplaneTest/Pages/FetchData.razor]

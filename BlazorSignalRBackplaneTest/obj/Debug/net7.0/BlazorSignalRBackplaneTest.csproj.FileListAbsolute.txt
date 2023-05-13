@@ -104,3 +104,9 @@ C:\Users\Jasper\AmazingCluster\test-blazor-backplane\BlazorSignalRBackplaneTest\
 C:\Users\Jasper\AmazingCluster\test-blazor-backplane\BlazorSignalRBackplaneTest\obj\Debug\net7.0\BlazorSignalRBackplaneTest.pdb
 C:\Users\Jasper\AmazingCluster\test-blazor-backplane\BlazorSignalRBackplaneTest\obj\Debug\net7.0\BlazorSignalRBackplaneTest.genruntimeconfig.cache
 C:\Users\Jasper\AmazingCluster\test-blazor-backplane\BlazorSignalRBackplaneTest\obj\Debug\net7.0\ref\BlazorSignalRBackplaneTest.dll
+C:\Users\Jasper\AmazingCluster\test-blazor-backplane\BlazorSignalRBackplaneTest\bin\Debug\net7.0\Blazored.LocalStorage.dll
+C:\Users\Jasper\AmazingCluster\test-blazor-backplane\BlazorSignalRBackplaneTest\bin\Debug\net7.0\Fluxor.dll
+C:\Users\Jasper\AmazingCluster\test-blazor-backplane\BlazorSignalRBackplaneTest\bin\Debug\net7.0\Fluxor.Blazor.Web.dll
+C:\Users\Jasper\AmazingCluster\test-blazor-backplane\BlazorSignalRBackplaneTest\bin\Debug\net7.0\Fluxor.Blazor.Web.ReduxDevTools.dll
+C:\Users\Jasper\AmazingCluster\test-blazor-backplane\BlazorSignalRBackplaneTest\bin\Debug\net7.0\Fluxor.Persist.dll
+C:\Users\Jasper\AmazingCluster\test-blazor-backplane\BlazorSignalRBackplaneTest\bin\Debug\net7.0\Newtonsoft.Json.dll

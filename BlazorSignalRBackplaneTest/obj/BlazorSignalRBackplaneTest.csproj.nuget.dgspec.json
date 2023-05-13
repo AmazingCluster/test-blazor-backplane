@@ -40,6 +40,22 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "Fluxor": {
+              "target": "Package",
+              "version": "[5.7.0, )"
+            },
+            "Fluxor.Blazor.Web": {
+              "target": "Package",
+              "version": "[5.7.0, )"
+            },
+            "Fluxor.Blazor.Web.ReduxDevTools": {
+              "target": "Package",
+              "version": "[5.7.0, )"
+            },
+            "Fluxor.Persist": {
+              "target": "Package",
+              "version": "[2.5.1, )"
+            },
             "Microsoft.AspNetCore.SignalR.StackExchangeRedis": {
               "target": "Package",
               "version": "[7.0.5, )"

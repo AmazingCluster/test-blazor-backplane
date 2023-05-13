@@ -1,10 +1,14 @@
-using BlazorSignalRBackplaneTest.Data;
+using Blazored.LocalStorage;
 
-using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Components.Web;
+using BlazorSignalRBackplaneTest.Data;
+using BlazorSignalRBackplaneTest.State.Storage;
+
+using Fluxor;
+using Fluxor.Persist.Middleware;
+using Fluxor.Persist.Storage;
+
 using Microsoft.AspNetCore.Http.Connections;
 using Microsoft.AspNetCore.SignalR;
-using Microsoft.Extensions.DependencyInjection;
 
 namespace BlazorSignalRBackplaneTest
 {
@@ -21,6 +25,19 @@ namespace BlazorSignalRBackplaneTest
 
             builder.Services.AddHttpClient();
             builder.Services.AddLogging();
+
+            builder.Services.AddFluxor(options =>
+            {
+                options.ScanAssemblies(typeof(Program).Assembly);
+                options.UsePersist();
+#if DEBUG
+                options.UseReduxDevTools();
+#endif
+            });
+
+            builder.Services.AddBlazoredLocalStorage();
+            builder.Services.AddScoped<IStringStateStorage, SessionStateStorage>();
+            builder.Services.AddScoped<IStoreHandler, JsonStoreHandler>();
 
             ISignalRServerBuilder signalRBuilder = builder.Services.AddSignalR();
 

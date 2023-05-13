@@ -1,0 +1,41 @@
+﻿@page "/counter"
+@using BlazorSignalRBackplaneTest.Pages.Counter.State;
+@using BlazorSignalRBackplaneTest.State;
+@inherits FluxorComponent
+
+<PageTitle>Counter</PageTitle>
+
+<h1>Global Counter</h1>
+
+<p role="status">Current global count: @GlobalState.Value.Count</p>
+
+<button class="btn btn-primary" @onclick="() => IncrementGlobalCount(1)">Click me (1)</button>
+<button class="btn btn-primary" @onclick="() => IncrementGlobalCount(2)">Click me (2)</button>
+
+<h1>Local Counter</h1>
+
+<p role="status">Current local count: @State.Value.Count</p>
+
+<button class="btn btn-primary" @onclick="() => IncrementCount(1)">Click me (1)</button>
+<button class="btn btn-primary" @onclick="() => IncrementCount(2)">Click me (2)</button>
+
+@code {
+    [Inject]
+    public IDispatcher Dispatcher { get; set; } = default!;
+
+    [Inject]
+    public IState<GlobalCounterState> GlobalState { get; set; } = default!;
+
+    [Inject]
+    public IState<CounterState> State { get; set; } = default!;
+
+    private void IncrementCount(int increment)
+    {
+        Dispatcher.Dispatch(new IncrementCounterAction { Increment = increment });
+    }
+
+    private void IncrementGlobalCount(int increment)
+    {
+        Dispatcher.Dispatch(new IncrementGlobalCounterAction { Increment = increment });
+    }
+}
