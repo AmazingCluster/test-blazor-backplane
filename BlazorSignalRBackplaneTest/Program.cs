@@ -39,7 +39,7 @@ namespace BlazorSignalRBackplaneTest
 
             if (builder.Configuration.GetValue<bool>("dataprotection:UseRedis"))
             {
-                ConnectionMultiplexer redis = ConnectionMultiplexer.SentinelConnect(redisConfigurationOptions);
+                ConnectionMultiplexer redis = ConnectionMultiplexer.Connect(redisConfigurationOptions);
                 builder.Services
                     .AddDataProtection()
                     .PersistKeysToStackExchangeRedis(redis, "DataProtection-Keys");
