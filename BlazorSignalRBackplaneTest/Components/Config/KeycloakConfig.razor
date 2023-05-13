@@ -1,0 +1,18 @@
+﻿<h3>KeycloakConfig</h3>
+
+@if (Configuration == null)
+{
+    <h3>Loading....</h3>
+}
+else
+{
+    <ul>
+        <li>@Configuration.Issuer</li>
+        <li>@Configuration.AuthorizationEndpoint</li>
+        <li>@Configuration.TokenEndpoint</li>
+        <li>@Configuration.UserinfoEndpoint</li>
+        <li>@Configuration.IntrospectionEndpoint</li>
+    </ul>
+}
+
+
