@@ -12,6 +12,7 @@
           "Fluxor.Blazor.Web": "5.7.0",
           "Fluxor.Blazor.Web.ReduxDevTools": "5.7.0",
           "Fluxor.Persist": "2.5.1",
+          "Microsoft.AspNetCore.DataProtection.StackExchangeRedis": "7.0.5",
           "Microsoft.AspNetCore.SignalR.StackExchangeRedis": "7.0.5",
           "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": "1.17.2"
         },
@@ -131,6 +132,51 @@
           "System.IO.Pipelines": "7.0.0"
         }
       },
+      "Microsoft.AspNetCore.Cryptography.Internal/7.0.5": {
+        "runtime": {
+          "lib/net7.0/Microsoft.AspNetCore.Cryptography.Internal.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.523.17410"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.DataProtection/7.0.5": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Cryptography.Internal": "7.0.5",
+          "Microsoft.AspNetCore.DataProtection.Abstractions": "7.0.5",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "7.0.0",
+          "Microsoft.Extensions.Hosting.Abstractions": "7.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "7.0.0",
+          "Microsoft.Extensions.Options": "7.0.1",
+          "System.Security.Cryptography.Xml": "7.0.1"
+        },
+        "runtime": {
+          "lib/net7.0/Microsoft.AspNetCore.DataProtection.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.523.17410"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.DataProtection.Abstractions/7.0.5": {
+        "runtime": {
+          "lib/net7.0/Microsoft.AspNetCore.DataProtection.Abstractions.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.523.17410"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.DataProtection.StackExchangeRedis/7.0.5": {
+        "dependencies": {
+          "Microsoft.AspNetCore.DataProtection": "7.0.5",
+          "StackExchange.Redis": "2.2.4"
+        },
+        "runtime": {
+          "lib/net7.0/Microsoft.AspNetCore.DataProtection.StackExchangeRedis.dll": {
+            "assemblyVersion": "7.0.5.0",
+            "fileVersion": "7.0.523.17410"
+          }
+        }
+      },
       "Microsoft.AspNetCore.Metadata/7.0.0": {},
       "Microsoft.AspNetCore.SignalR.StackExchangeRedis/7.0.5": {
         "dependencies": {
@@ -153,12 +199,29 @@
           }
         }
       },
+      "Microsoft.Extensions.Configuration.Abstractions/7.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Primitives": "7.0.0"
+        }
+      },
       "Microsoft.Extensions.DependencyInjection/7.0.0": {
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection.Abstractions": "7.0.0"
         }
       },
       "Microsoft.Extensions.DependencyInjection.Abstractions/7.0.0": {},
+      "Microsoft.Extensions.FileProviders.Abstractions/7.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Primitives": "7.0.0"
+        }
+      },
+      "Microsoft.Extensions.Hosting.Abstractions/7.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Abstractions": "7.0.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "7.0.0",
+          "Microsoft.Extensions.FileProviders.Abstractions": "7.0.0"
+        }
+      },
       "Microsoft.Extensions.Logging.Abstractions/7.0.0": {},
       "Microsoft.Extensions.Options/7.0.1": {
         "dependencies": {
@@ -291,6 +354,7 @@
           }
         }
       },
+      "System.Formats.Asn1/7.0.0": {},
       "System.IO.Pipelines/7.0.0": {},
       "System.Memory/4.5.3": {},
       "System.Reflection.Emit/4.6.0": {},
@@ -300,6 +364,11 @@
         "dependencies": {
           "Microsoft.NETCore.Platforms": "5.0.0",
           "System.Security.Principal.Windows": "5.0.0"
+        }
+      },
+      "System.Security.Cryptography.Pkcs/7.0.0": {
+        "dependencies": {
+          "System.Formats.Asn1": "7.0.0"
         }
       },
       "System.Security.Cryptography.ProtectedData/5.0.0": {
@@ -315,6 +384,17 @@
             "assetType": "runtime",
             "assemblyVersion": "5.0.0.0",
             "fileVersion": "5.0.20.51904"
+          }
+        }
+      },
+      "System.Security.Cryptography.Xml/7.0.1": {
+        "dependencies": {
+          "System.Security.Cryptography.Pkcs": "7.0.0"
+        },
+        "runtime": {
+          "lib/net7.0/System.Security.Cryptography.Xml.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.222.60605"
           }
         }
       },
@@ -443,6 +523,34 @@
       "path": "microsoft.aspnetcore.components.web/7.0.0",
       "hashPath": "microsoft.aspnetcore.components.web.7.0.0.nupkg.sha512"
     },
+    "Microsoft.AspNetCore.Cryptography.Internal/7.0.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-fevCVLxTfSsJEGtxNJlNYYzHhXWN8Uw2+qdi3VGzSoWSv114xTszRuRdGXUEVRmA+fYcQ9aRYqsvfVLtZi+VcQ==",
+      "path": "microsoft.aspnetcore.cryptography.internal/7.0.5",
+      "hashPath": "microsoft.aspnetcore.cryptography.internal.7.0.5.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.DataProtection/7.0.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-3G5NEjT6uvmFMkaU48u7ZPlWHFNl72S67Veje3KBSZiZ7H3EGtFEQrC3wO3Ho2xMMEi689I5VmszUNXrSsS9rw==",
+      "path": "microsoft.aspnetcore.dataprotection/7.0.5",
+      "hashPath": "microsoft.aspnetcore.dataprotection.7.0.5.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.DataProtection.Abstractions/7.0.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-khYY8OlU6x84i0a9Ac/+mm2Lv2khhNaY9oNO+N40dxcle1BCQqmJoQApu/lAMrb/WxoB/uESsxM+LiCEhUFh4Q==",
+      "path": "microsoft.aspnetcore.dataprotection.abstractions/7.0.5",
+      "hashPath": "microsoft.aspnetcore.dataprotection.abstractions.7.0.5.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.DataProtection.StackExchangeRedis/7.0.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-0Gex4UFawEk1VU6nbqzOij/DECmR0R3iU/RLPZWpzX1uCmZdLzSz7sg2DvtS+7snuyBAhdmJI9dxMGB8cXzl/g==",
+      "path": "microsoft.aspnetcore.dataprotection.stackexchangeredis/7.0.5",
+      "hashPath": "microsoft.aspnetcore.dataprotection.stackexchangeredis.7.0.5.nupkg.sha512"
+    },
     "Microsoft.AspNetCore.Metadata/7.0.0": {
       "type": "package",
       "serviceable": true,
@@ -464,6 +572,13 @@
       "path": "microsoft.bcl.asyncinterfaces/1.0.0",
       "hashPath": "microsoft.bcl.asyncinterfaces.1.0.0.nupkg.sha512"
     },
+    "Microsoft.Extensions.Configuration.Abstractions/7.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-f34u2eaqIjNO9YLHBz8rozVZ+TcFiFs0F3r7nUJd7FRkVSxk8u4OpoK226mi49MwexHOR2ibP9MFvRUaLilcQQ==",
+      "path": "microsoft.extensions.configuration.abstractions/7.0.0",
+      "hashPath": "microsoft.extensions.configuration.abstractions.7.0.0.nupkg.sha512"
+    },
     "Microsoft.Extensions.DependencyInjection/7.0.0": {
       "type": "package",
       "serviceable": true,
@@ -477,6 +592,20 @@
       "sha512": "sha512-h3j/QfmFN4S0w4C2A6X7arXij/M/OVw3uQHSOFxnND4DyAzO1F9eMX7Eti7lU/OkSthEE0WzRsfT/Dmx86jzCw==",
       "path": "microsoft.extensions.dependencyinjection.abstractions/7.0.0",
       "hashPath": "microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512"
+    },
+    "Microsoft.Extensions.FileProviders.Abstractions/7.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-NyawiW9ZT/liQb34k9YqBSNPLuuPkrjMgQZ24Y/xXX1RoiBkLUdPMaQTmxhZ5TYu8ZKZ9qayzil75JX95vGQUg==",
+      "path": "microsoft.extensions.fileproviders.abstractions/7.0.0",
+      "hashPath": "microsoft.extensions.fileproviders.abstractions.7.0.0.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Hosting.Abstractions/7.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-43n9Je09z0p/7ViPxfRqs5BUItRLNVh5b6JH40F2Agkh2NBsY/jpNYTtbCcxrHCsA3oRmbR6RJBzUutB4VZvNQ==",
+      "path": "microsoft.extensions.hosting.abstractions/7.0.0",
+      "hashPath": "microsoft.extensions.hosting.abstractions.7.0.0.nupkg.sha512"
     },
     "Microsoft.Extensions.Logging.Abstractions/7.0.0": {
       "type": "package",
@@ -576,6 +705,13 @@
       "path": "system.drawing.common/5.0.0",
       "hashPath": "system.drawing.common.5.0.0.nupkg.sha512"
     },
+    "System.Formats.Asn1/7.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-+nfpV0afLmvJW8+pLlHxRjz3oZJw4fkyU9MMEaMhCsHi/SN9bGF9q79ROubDiwTiCHezmK0uCWkPP7tGFP/4yg==",
+      "path": "system.formats.asn1/7.0.0",
+      "hashPath": "system.formats.asn1.7.0.0.nupkg.sha512"
+    },
     "System.IO.Pipelines/7.0.0": {
       "type": "package",
       "serviceable": true,
@@ -618,12 +754,26 @@
       "path": "system.security.accesscontrol/5.0.0",
       "hashPath": "system.security.accesscontrol.5.0.0.nupkg.sha512"
     },
+    "System.Security.Cryptography.Pkcs/7.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-mjUbEXkR6DYRef6dnEYKdfec9otcAkibExL+1f9hmbGlWIUyaCnS3Y3oGZEet38waXmuY1ORE8vgv4sgD5nMYg==",
+      "path": "system.security.cryptography.pkcs/7.0.0",
+      "hashPath": "system.security.cryptography.pkcs.7.0.0.nupkg.sha512"
+    },
     "System.Security.Cryptography.ProtectedData/5.0.0": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-HGxMSAFAPLNoxBvSfW08vHde0F9uh7BjASwu6JF9JnXuEPhCY3YUqURn0+bQV/4UWeaqymmrHWV+Aw9riQCtCA==",
       "path": "system.security.cryptography.protecteddata/5.0.0",
       "hashPath": "system.security.cryptography.protecteddata.5.0.0.nupkg.sha512"
+    },
+    "System.Security.Cryptography.Xml/7.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-MCxBCtH0GrDuvU63ZODwQHQZPchb24pUAX3MfZ6b13qg246ZD10PRdOvay8C9HBPfCXkymUNwFPEegud7ax2zg==",
+      "path": "system.security.cryptography.xml/7.0.1",
+      "hashPath": "system.security.cryptography.xml.7.0.1.nupkg.sha512"
     },
     "System.Security.Permissions/5.0.0": {
       "type": "package",
