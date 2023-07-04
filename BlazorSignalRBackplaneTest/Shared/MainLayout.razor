@@ -17,3 +17,17 @@
         </article>
     </main>
 </div>
+
+@code {
+
+    [Inject]
+    public AuthenticationStateProvider AuthProvider { get; set; }
+
+    protected override async Task OnParametersSetAsync()
+    {
+        var state = await AuthProvider.GetAuthenticationStateAsync();
+
+        return;
+    }
+
+}

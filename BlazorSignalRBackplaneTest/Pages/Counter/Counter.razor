@@ -21,24 +21,3 @@
 <button class="btn btn-primary" @onclick="() => IncrementCount(2)">Click me (2)</button>
 
 <KeycloakConfig/>
-
-@code {
-    [Inject]
-    public IDispatcher Dispatcher { get; set; } = default!;
-
-    [Inject]
-    public IState<GlobalCounterState> GlobalState { get; set; } = default!;
-
-    [Inject]
-    public IState<CounterState> State { get; set; } = default!;
-
-    private void IncrementCount(int increment)
-    {
-        Dispatcher.Dispatch(new IncrementCounterAction { Increment = increment });
-    }
-
-    private void IncrementGlobalCount(int increment)
-    {
-        Dispatcher.Dispatch(new IncrementGlobalCounterAction { Increment = increment });
-    }
-}
